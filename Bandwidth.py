@@ -24,13 +24,13 @@ def MeasureBandwidth(url):
 
     #fully load the file
     content = response.read()
-    
+
     end = timer.time() 
 
     time_used = end-start
     #convert byte to kb
     size = sys.getsizeof(content)/1000
-    speed = size//time_used
+    speed = size/time_used
 
     return int(speed)
 
