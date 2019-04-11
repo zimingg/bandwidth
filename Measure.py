@@ -21,7 +21,7 @@ class MyMeasure:
         end = timer.time() 
 
         if size < 100:
-            print("NOTICE: URL file size is smaller than 100kb, the result might not be accurate.")
+            print("NOTICE: URL file size is too small (<100kb), the result might not be accurate.")
 
         time_used = end-start
         speed = size/time_used
