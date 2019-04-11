@@ -14,14 +14,17 @@ def MeasureBandwidth(url):
         raise Exception
        
     start = timer.time() 
+
     # check if there is any error loading the url
     try:
         response = urllib.request.urlopen(request)
     except urllib.error.HTTPError as e:
         print("Exception: URL Error! Error Number: {}, Reason: {} ".format(e.code, e.reason))
         raise Exception
+
     #fully load the file
     content = response.read()
+    
     end = timer.time() 
 
     time_used = end-start
