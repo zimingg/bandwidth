@@ -22,7 +22,7 @@ class MyTestCase(unittest.TestCase):
         print("TEST3: [ {} ] nothing input, should raise Exception.".format(test3_url))
         self.assertRaises(Exception, MyMeasure().MeasureBandwidth, test3_url)
 
-        print("TEST4: [ {} ] valid url, shoud return an integer.".format(test4_url))
+        print("TEST4: [ {} ] valid url with small file, shoud return an integer.".format(test4_url))
         self.assertTrue(isinstance(MyMeasure().MeasureBandwidth(test4_url),int),"It should be integer")
 
         print("TEST5: [ {} ] valid url with large file, shoud return an integer.".format(test5_url))

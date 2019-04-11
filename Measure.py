@@ -5,12 +5,12 @@ import sys
 
 class MyMeasure:
     def MeasureBandwidth(self,url):
-        # check if input is a valid url
+        # if input is an invalid url, raise ValueError
         request = urllib.request.Request(url)
         
         start = timer.time() 
 
-        # check if there is any error loading the url
+        # if there is any error loading the url, raise urllib.error.HTTPError
         response = urllib.request.urlopen(request)
 
         #fully read through the file and count the size as kb.

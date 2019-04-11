@@ -20,6 +20,6 @@ if __name__ == "__main__":
     main()
     print("---------------------------")
     #run unit test
-    # print("Unit Test:")
-    # MyTestCase().test1()
+    print("Unit Test:")
+    MyTestCase().test1()
     
