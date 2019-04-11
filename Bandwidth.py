@@ -55,12 +55,15 @@ class MyTestCase(unittest.TestCase):
         self.assertRaises(Exception, MeasureBandwidth,"https://apod.nasa.gov/apod/imagess/1811/JupiterSwirls_JunoBrealey_3709.jjjjpg")
 
         print("TEST2: invalid input, should raise Exception.")
-        self.assertRaises(Exception, MeasureBandwidth,"ssdsds")
+        self.assertRaises(Exception, MeasureBandwidth,"dsdsdsdsd")
 
-        print("TEST3: valid url, shoud return an integer.")
+        print("TEST3: nothing input, should raise Exception.")
+        self.assertRaises(Exception, MeasureBandwidth, "")
+
+        print("TEST4: valid url, shoud return an integer.")
         self.assertTrue(isinstance(MeasureBandwidth("https://www.google.com/"),int),"It should be integer")
 
-        print("TEST4: valid url with large file, shoud return an integer.")
+        print("TEST5: valid url with large file, shoud return an integer.")
         self.assertTrue(isinstance(MeasureBandwidth("https://apod.nasa.gov/apod/image/1811/JupiterSwirls_JunoBrealey_3709.jpg"),int),"It should be integer")
         
         print("ALL TEST PASSED!")
