@@ -14,15 +14,16 @@ def MeasureBandwidth(url):
         raise Exception
        
     start = timer.time() 
-
+    # check if there is any error loading the url
     try:
         response = urllib.request.urlopen(request)
     except urllib.error.HTTPError as e:
         print("Exception: URL Error! Error Number: {}, Reason: {} ".format(e.code, e.reason))
         raise Exception
-    
+    #fully load the file
     content = response.read()
     end = timer.time() 
+
     time_used = end-start
     #convert byte to kb
     size = sys.getsizeof(content)/1000
@@ -52,7 +53,7 @@ class MyTestCase(unittest.TestCase):
         self.assertRaises(Exception, MeasureBandwidth,"ssdsds")
         print("TEST3: valid url, shoud return an integer.")
         self.assertTrue(isinstance(MeasureBandwidth("https://www.google.com/"),int),"It should be integer")
-        print("TEST4: valid url with large size file, shoud return an integer.")
+        print("TEST4: valid url with large file, shoud return an integer.")
         self.assertTrue(isinstance(MeasureBandwidth("https://apod.nasa.gov/apod/image/1811/JupiterSwirls_JunoBrealey_3709.jpg"),int),"It should be integer")
         print("ALL TEST PASSED!")
 
@@ -62,6 +63,7 @@ if __name__ == "__main__":
     main()
     print("---------------------------")
     #run unit test
+    print("Unit Test:")
     test = MyTestCase()
     test.test1()
     
