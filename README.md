@@ -15,7 +15,7 @@ Python3
 1. Get into the folder through terminal
 2. run this line in terminal
 ```console
-xxxxxx:~$ python3 Main.py (YOUR URL)
+xxxxxx:Folder$ python3 Main.py (YOUR URL)
 ```
 
 
