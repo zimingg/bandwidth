@@ -13,8 +13,7 @@ Python3
 ### Run the program
 
 1. Get into the folder through terminal
-2. run 
-
+2. run this line in terminal
 ```console
 xxxxxx:~$ python3 Main.py (YOUR URL)
 ```
