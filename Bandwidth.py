@@ -3,32 +3,23 @@ import time as timer
 import os
 import sys
 
-class AError(Exception):
-   """Base class for other exceptions"""
-   pass
 
 def MeasureBandwidth(url):
     # check if input is a valid url
     try:
         request = urllib.request.Request(url)
     except:
-        print("invalid input!")
+        print("Input is not a valid url!")
         raise Exception
        
-        
-    
-    
     start = timer.time() 
 
     try:
         response = urllib.request.urlopen(request)
     except urllib.error.HTTPError as e:
-        print("Invalid url!")
-        print("Error Number: {}, Reason: {}".format(e.code, e.reason))
+        print("URL Error! Error Number: {}, Reason: {} ".format(e.code, e.reason))
         raise Exception
-        
     
-
     content = response.read()
     end = timer.time() 
     time_used = end-start
@@ -48,16 +39,8 @@ def main():
             speed = MeasureBandwidth(sys.argv[1])
             print("Bandwidth: {}kb/s ".format(speed))
         except:
-            print("Wrong")
+            print("Please try again!")
        
-        
-            
-            
-
-        
-            
-        
-
 
 if __name__ == "__main__":
     main()
