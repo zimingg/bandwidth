@@ -2,6 +2,7 @@ import urllib.request
 import time as timer
 import os
 import sys
+import unittest
 
 
 def MeasureBandwidth(url):
@@ -9,7 +10,7 @@ def MeasureBandwidth(url):
     try:
         request = urllib.request.Request(url)
     except:
-        print("Input is not a valid url!")
+        print("Exception: Input is not a valid url!")
         raise Exception
        
     start = timer.time() 
@@ -17,7 +18,7 @@ def MeasureBandwidth(url):
     try:
         response = urllib.request.urlopen(request)
     except urllib.error.HTTPError as e:
-        print("URL Error! Error Number: {}, Reason: {} ".format(e.code, e.reason))
+        print("Exception: URL Error! Error Number: {}, Reason: {} ".format(e.code, e.reason))
         raise Exception
     
     content = response.read()
@@ -41,7 +42,26 @@ def main():
         except:
             print("Please try again!")
        
+#unit test
+class MyTestCase(unittest.TestCase):
+    def test1(self):
+        print("RUN TEST NOW:")
+        print("TEST1: 404 error, should raise Exception.")
+        self.assertRaises(Exception, MeasureBandwidth,"https://apod.nasa.gov/apod/imagess/1811/JupiterSwirls_JunoBrealey_3709.jjjjpg")
+        print("TEST2: invalid input, should raise Exception.")
+        self.assertRaises(Exception, MeasureBandwidth,"ssdsds")
+        print("TEST3: valid url, shoud return an integer.")
+        self.assertTrue(isinstance(MeasureBandwidth("https://www.google.com/"),int),"It should be integer")
+        print("TEST4: valid url with large size file, shoud return an integer.")
+        self.assertTrue(isinstance(MeasureBandwidth("https://apod.nasa.gov/apod/image/1811/JupiterSwirls_JunoBrealey_3709.jpg"),int),"It should be integer")
+        print("ALL TEST PASSED!")
+
+
 
 if __name__ == "__main__":
     main()
+    print("---------------------------")
+    #run unit test
+    test = MyTestCase()
+    test.test1()
     
