@@ -8,8 +8,8 @@ def MeasureBandwidth(url):
     try:
         request = urllib.request.Request(url)
     except:
-        # print("invalid input!")
-        raise ValueError("invalid input!")
+        print("invalid input!")
+        
     
     
     start = timer.time() 
@@ -17,10 +17,8 @@ def MeasureBandwidth(url):
     try:
         response = urllib.request.urlopen(request)
     except urllib.error.HTTPError as e:
-        # print("Invalid url!")
-        # print("Error Number: {}, Reason: {}".format(e.code, e.reason))
-        raise ValueError("Invalid url! Error Number: {}, Reason: {}".format(e.code, e.reason))
-        # return -1
+        print("Invalid url!")
+        print("Error Number: {}, Reason: {}".format(e.code, e.reason))
 
     content = response.read()
     end = timer.time() 
@@ -37,9 +35,14 @@ def main():
     if len(sys.argv) <= 1: #nothing entered
         print("No url entered!")
     else:
-        speed = MeasureBandwidth(sys.argv[1])
-        if speed!=-1: 
+        try:
+            speed = MeasureBandwidth(sys.argv[1])
             print("Bandwidth: {}kb/s ".format(speed))
+        except:
+            ""
+
+        
+            
         
 
 
