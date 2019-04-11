@@ -1,39 +1,32 @@
 import urllib.request
-import time
+import time as timer
 import os
 import sys
 
 def MeasureBandwidth(url):
-    #check if the input string is an url
+    # check if input is a valid url
     try:
-        the_url = urllib.request.Request(url)
+        request = urllib.request.Request(url)
     except:
-        print("invalid input!")
-        return -1
+        # print("invalid input!")
+        raise ValueError("invalid input!")
     
     
-    start = time.time() #start record time
+    start = timer.time() 
 
-    #open the url
     try:
-        url_file = urllib.request.urlopen(the_url)
+        response = urllib.request.urlopen(request)
     except urllib.error.HTTPError as e:
-        print("Invalid url!")
-        print("Error Number: {}, Reason: {}".format(e.code, e.reason))
-        return -1
+        # print("Invalid url!")
+        # print("Error Number: {}, Reason: {}".format(e.code, e.reason))
+        raise ValueError("Invalid url! Error Number: {}, Reason: {}".format(e.code, e.reason))
+        # return -1
 
-    #load the file
-    url_file = url_file.read()
-
-    end = time.time() #end record time
-
-    #get time_used
+    content = response.read()
+    end = timer.time() 
     time_used = end-start
-
-    #get the size of the file and convert byte to kb
-    size = sys.getsizeof(url_file)/1000
-
-    #get the speed
+    #convert byte to kb
+    size = sys.getsizeof(content)/1000
     speed = size//time_used
 
     return int(speed)
