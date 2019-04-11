@@ -13,14 +13,17 @@ class MyMeasure:
         # check if there is any error loading the url
         response = urllib.request.urlopen(request)
 
-        #fully load the file
-        content = response.read()
+        #fully read through the file and count the size as kb.
+        size = 0
+        while response.read(1000):
+            size+=1
 
         end = timer.time() 
 
+        if size < 100:
+            print("NOTICE: URL file size is smaller than 100kb, the result might not be accurate.")
+
         time_used = end-start
-        #convert byte to kb
-        size = sys.getsizeof(content)/1000
         speed = size/time_used
 
         return int(speed)
