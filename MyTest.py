@@ -28,4 +28,4 @@ class MyTestCase(unittest.TestCase):
         print("TEST5: [ {} ] valid url with large file, shoud return an integer.".format(test5_url))
         self.assertTrue(isinstance(MyMeasure().MeasureBandwidth(test5_url),int),"It should be integer")
         
-        print("ALL TEST PASSED!")
+        print("ALL TESTS PASSED!")
