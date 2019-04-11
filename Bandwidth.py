@@ -3,31 +3,6 @@ import time
 import os
 import sys
 
-# def MeasureBandwidth2(url):
-#     #set a timer
-#     start = time.time()
-
-#     #check and download url
-#     try:
-#         urllib.request.urlopen(url)
-#     except:
-#         return -1
-
-#     #get time used
-#     end = time.time()
-#     time_used = end - start
-
-#     #get size and convert it from byte to kb
-#     size = os.path.getsize("./file")//1000
-
-#     #get speed
-#     speed = size//time_used
-
-#     #remove downloaded file
-#     os.remove("./file")
-
-#     return speed
-
 def MeasureBandwidth(url):
     #check if the input string is an url
     try:
