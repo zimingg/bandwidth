@@ -12,6 +12,7 @@ class BandwidthMeasurer:
         response = urllib.request.urlopen(request, timeout=10)
 
         start = timer.time() 
+        
         #fully read through the file and count the size as kb.
         size = 0
         while response.read(1000):

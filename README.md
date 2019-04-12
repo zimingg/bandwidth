@@ -42,7 +42,7 @@
   1. Get into the folder through terminal
   2. run this line in terminal
   ```console
-    xxxxxx:Folder$ python3 BandwidthMeasureCli.py (YOUR URL)
+    $ python3 BandwidthMeasureCli.py (YOUR URL)
   ```
 
 
@@ -51,7 +51,7 @@
   1. Get into the folder through terminal
   2. run this line in terminal
   ```console
-    xxxxxx:Folder$ python3 MyTest.py 
+    $ python3 MyTest.py 
   ```
   
 
