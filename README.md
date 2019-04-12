@@ -3,7 +3,7 @@
   This is a Python program that measures your internet bandwidth. The project accept a URL as a command-line argument and     print the kilobytes per second that it takes to fetch that URL.
 
 ## Project Details
-* Measure.py
+* BandwidthMeasurer.py
 
   In BandwidthMeasurer class, I implemented a function Measure which take an URL as input and return an integer.
 
@@ -18,13 +18,13 @@
 
   * Include unit test for this program. Details below.
 
-* Main.py
+* BandwidthMeasureCli.py
 
   This is the main function to measure the bandwidth and run test.
   
   1. Get command-line argument, if no url entered, stop.
   
-  2. Call MeasureBandwidth(), if no exception raised, print the bandwidth, or catch Exceptions and print error reason.
+  2. Call Measure(), if no exception raised, print the bandwidth, or catch Exceptions and print error reason.
   
   3. run the test.
 

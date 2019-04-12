@@ -1,5 +1,5 @@
 import unittest
-from Measure import BandwidthMeasurer
+from BandwidthMeasurer import BandwidthMeasurer
 
 #unit test
 class MyTestCase(unittest.TestCase):

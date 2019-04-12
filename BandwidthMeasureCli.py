@@ -1,9 +1,9 @@
 import sys
 from MyTest import MyTestCase
-from Measure import BandwidthMeasurer
+from BandwidthMeasurer import BandwidthMeasurer
 import urllib.request
 
-def main():
+def BandwidthMeasureCli():
     #check if url is entered
     if len(sys.argv) <= 1: #nothing entered
         print("No url entered!")
@@ -23,7 +23,7 @@ def test():
     MyTestCase().test1()
 
 if __name__ == "__main__":
-    main()
+    BandwidthMeasureCli()
     print("---------------------------")
     #run unit test
     test()
