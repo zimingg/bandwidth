@@ -1,5 +1,5 @@
 import unittest
-from Measure import MyMeasure
+from Measure import BandwidthMeasurer
 
 #unit test
 class MyTestCase(unittest.TestCase):
@@ -14,18 +14,18 @@ class MyTestCase(unittest.TestCase):
         print("RUN TEST NOW:")
 
         print("TEST1: [ {} ] 404 error, should raise Exception.".format(test1_url))
-        self.assertRaises(Exception, MyMeasure().MeasureBandwidth,test1_url)
+        self.assertRaises(Exception, BandwidthMeasurer().Measure,test1_url)
 
         print("TEST2: [ {} ] invalid input, should raise Exception.".format(test2_url))
-        self.assertRaises(Exception, MyMeasure().MeasureBandwidth, test2_url)
+        self.assertRaises(Exception, BandwidthMeasurer().Measure, test2_url)
 
         print("TEST3: [ {} ] nothing input, should raise Exception.".format(test3_url))
-        self.assertRaises(Exception, MyMeasure().MeasureBandwidth, test3_url)
+        self.assertRaises(Exception, BandwidthMeasurer().Measure, test3_url)
 
         print("TEST4: [ {} ] valid url with small file, shoud return an integer.".format(test4_url))
-        self.assertTrue(isinstance(MyMeasure().MeasureBandwidth(test4_url),int),"It should be integer")
+        self.assertTrue(isinstance(BandwidthMeasurer().Measure(test4_url),int),"It should be integer")
 
         print("TEST5: [ {} ] valid url with large file, shoud return an integer.".format(test5_url))
-        self.assertTrue(isinstance(MyMeasure().MeasureBandwidth(test5_url),int),"It should be integer")
+        self.assertTrue(isinstance(BandwidthMeasurer().Measure(test5_url),int),"It should be integer")
         
         print("ALL TESTS PASSED!")

@@ -3,8 +3,8 @@ import time as timer
 import os
 import sys
 
-class MyMeasure:
-    def MeasureBandwidth(self,url):
+class BandwidthMeasurer:
+    def Measure(self,url):
         # if input is an invalid url, raise ValueError
         request = urllib.request.Request(url)
         
