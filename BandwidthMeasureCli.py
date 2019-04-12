@@ -22,7 +22,7 @@ def BandwidthMeasureCli():
 
 if __name__ == "__main__":
     BandwidthMeasureCli()
-    print("---------------------------")
+  
    
     
     
