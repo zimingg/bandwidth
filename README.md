@@ -5,13 +5,13 @@
 ## Project Details
 * Measure.py
 
-  In MyMeasure class, I implemented a function MeasureBandwidth which take an URL as input and return an integer.
+  In BandwidthMeasurer class, I implemented a function Measure which take an URL as input and return an integer.
 
   1. If the input URL is invalid or the URL has a HTTP ERROR, raise Exception.
 
   2. Use the valid URL to get response. We do not store it but count the size while reading through it.
 
-  3. Get the speed by size / time used, and return.
+  3. Get the speed by size / duration, and return.
 
 
 * MyTest.py
