@@ -15,7 +15,9 @@ def BandwidthMeasureCli():
             print("Unknown url type")
         except urllib.error.HTTPError as e:
             print("URL Error! Error Number: {}, Reason: {} ".format(e.code, e.reason))
-        except Exception as e:
+        except urllib.error.URLError as e:
+            print("Timeout, please check your network connection or try a smaller file")
+        except:
             print("unexpect error occurred")
 
 

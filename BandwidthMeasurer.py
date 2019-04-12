@@ -11,7 +11,7 @@ class BandwidthMeasurer:
         start = timer.time() 
 
         # if there is any error loading the url, raise urllib.error.HTTPError
-        response = urllib.request.urlopen(request)
+        response = urllib.request.urlopen(request, timeout=10)
 
         #fully read through the file and count the size as kb.
         size = 0
