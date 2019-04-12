@@ -16,7 +16,8 @@
 
 * MyTest.py
 
-  * Include unit test for this program. Details below.
+  1. Include unit test for this program. Details below.
+  2. Run all the tests.
 
 * BandwidthMeasureCli.py
 
