@@ -20,13 +20,12 @@
 
 * BandwidthMeasureCli.py
 
-  This is the main function to measure the bandwidth and run test.
+  This is the main function to measure the bandwidth.
   
   1. Get command-line argument, if no url entered, stop.
   
   2. Call Measure(), if no exception raised, print the bandwidth, or catch Exceptions and print error reason.
   
-  3. run the test.
 
 ## Getting Started
 
