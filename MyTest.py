@@ -9,7 +9,7 @@ class MyTestCase(unittest.TestCase):
         test2_url = "dsdsdsdsd"
         test3_url = ""
         test4_url = "https://www.google.com/"
-        test5_url = "https://apod.nasa.gov/apod/image/1811/JupiterSwirls_JunoBrealey_3709.jpg"
+        test5_url = "https://apod.nasa.gov/apod/image/1903/OrionBullets_Gemini_2592.jpg"
 
         print("RUN TEST NOW:")
 
