@@ -29,3 +29,12 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(isinstance(BandwidthMeasurer().Measure(test5_url),int),"It should be integer")
         
         print("ALL TESTS PASSED!")
+
+def test():
+    print("Unit Test:")
+    MyTestCase().test1()
+
+if __name__ == "__main__":
+    #run unit test
+    test()
+    

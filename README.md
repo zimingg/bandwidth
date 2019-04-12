@@ -42,16 +42,18 @@
   1. Get into the folder through terminal
   2. run this line in terminal
   ```console
-    xxxxxx:Folder$ python3 Main.py (YOUR URL)
+    xxxxxx:Folder$ python3 BandwidthMeasureCli.py (YOUR URL)
   ```
 
 
 
 ## Running the tests
-
-  It will automatically run the test after measure the url you input. 
-
-  You can cancle it by comment out "MyTestCase().test1()" in Main.py
+  1. Get into the folder through terminal
+  2. run this line in terminal
+  ```console
+    xxxxxx:Folder$ python3 MyTest.py 
+  ```
+  
 
 ### Details about tests
   There are 5 tests:

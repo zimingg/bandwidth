@@ -18,14 +18,11 @@ def BandwidthMeasureCli():
         except Exception as e:
             print("unexpect error occurred")
 
-def test():
-    print("Unit Test:")
-    MyTestCase().test1()
+
 
 if __name__ == "__main__":
     BandwidthMeasureCli()
     print("---------------------------")
-    #run unit test
-    test()
+   
     
     
